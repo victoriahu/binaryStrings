@@ -27,31 +27,20 @@ function strSum(aString, bString) {
 	}
 	
 
-	// for (var i = a.length - 1; i > 0; i--) {
-	// 	if (b[i] !== 0 || b[i] !== 1) {
-	// 			b.unshift("0");
-	// 	}
-	// }
-	// var i = a.length - 1;
 	var carryOver = 0;
 	var result = "";
 
-	// return b;
 
 	for (var i = longest.length - 1; i >= 0; i--) {
-		// console.log("index is " + result);
 		var sum = Number(a[i]) + Number(b[i]) + carryOver;
 		// console.log("index: " + i + ", a: " + Number(a[i]) + ", b: " + Number(b[i]) + ", carryOver: " + carryOver);
-		// console.log(sum);
 		if (sum === 2) {
 			result = "0" + result;
 			carryOver = 1;
-			// console.log("index:" + i + ", sum === 2: " + result);
 		}
 		if (sum === 3) {
 			result = "1" + result;
 			carryOver = 1;
-			// console.log("index:" + i + ", sum === 3: " + result);
 		}
 		if (sum === 0 || sum === 1) {
 			if (sum === 0) {
@@ -60,9 +49,7 @@ function strSum(aString, bString) {
 			if (sum === 1) {
 				result = "1" + result;		
 			}
-			// console.log(result);
 			carryOver = 0;
-			// console.log("index:" + i + ", sum === 0 or 1: " + sum);
 		}
 	}
 	return carryOver + result;
